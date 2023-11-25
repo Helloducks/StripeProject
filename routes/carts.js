@@ -3,7 +3,7 @@ const multer = require('multer');
 const path = require('path');
 var router = express.Router();
 const Cart =  require('../models/cart');
-const stripe = require("stripe")('sk_test_51NVlMOHKR689wiZ5OEMng5a5l8j8ab4kY9lIkHie4src8Iy0Kq7hPErbEsauaOucEfgWhd6RIOAF7tEsod4vQsFc00aPvJtXZz');
+const stripe = require("stripe")('{link: to Stripe}');
 
 router.get('/',(req,res,next)=>{
     Cart.find((err,carts)=>{
