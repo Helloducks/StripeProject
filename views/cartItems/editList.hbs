@@ -1,0 +1,47 @@
+<h1>{{title}}</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Product name
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        Image
+      </th>
+      <th>
+        Action
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each dataset}}
+      <tr>
+        <td>{{this.name}}</td>
+
+        <td>${{this.unitPrice}}</td>
+        <td><img
+            src="..\\{{this.imagePath}}"
+            alt="{{this.imagePath}}"
+            width="50px"
+            height="auto"
+          /></td>
+
+        <td>
+          <a
+            href="/cartItems/delete/{{this._id}}"
+            class="btn btn-danger"
+            id="deleteButton"
+            onclick="return areYouSure()"
+          >Delete</a>
+
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<script src="../javascripts/script.js"></script>

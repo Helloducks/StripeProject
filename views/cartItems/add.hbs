@@ -1,0 +1,32 @@
+<h1>{{title}}</h1>
+
+
+
+
+<div class="card text-center w-75" style="margin: auto;">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Add Cart Items</h5>
+    <form method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name"placeholder="Name of Product">
+  </div>
+  <div class="mb-3">
+    <label for="price">Price</label>
+    <input type="price" class="form-control" id="price" name="price"placeholder="Price of Product">
+  </div>
+  <div class="custom-file mb-3">
+    <input type="file" class="custom-file-input" id="image" name="image"required>
+    <label class="custom-file-label" for="validatedCustomFile">Choose image...</label>
+  </div>
+  <input type="submit" class="btn btn-primary">
+</form>
+    
+  </div>
+  <div class="card-footer text-muted">
+    For Admin Use
+  </div>
+</div>

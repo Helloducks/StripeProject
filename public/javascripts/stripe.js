@@ -1,0 +1,1 @@
+//TODO bring the databse import and map to the Strip object and send that fetch request

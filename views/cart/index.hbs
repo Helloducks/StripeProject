@@ -1,0 +1,37 @@
+<div class="container my-5">
+        <h2>Your Shopping Cart</h2>
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each dataset}}
+                <tr>
+                    <td><img src="{{this.imagePath}}" alt="Product Image" class="img-fluid" width="50px" height="auto"></td>
+                    <td>{{this.name}}</td>
+                    <td>${{this.unitPrice}}</td>
+                    <td>{{this.quantity}}x</td>
+                    <td><button class="btn btn-danger btn-sm">Remove</button></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+        <div class="row justify-content-end">
+            <div class="col-md-4 text-right grand-total">
+                Grand Total: $Total
+                <a class="btn btn-outline-dark" href="/carts/create-stripe-session" id="finalCheckout"><i class="bi bi-credit-card"></i>  Checkout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.5/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
