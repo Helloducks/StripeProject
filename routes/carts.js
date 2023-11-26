@@ -3,11 +3,9 @@ const multer = require('multer');
 const path = require('path');
 var router = express.Router();
 const Cart =  require('../models/cart');
-<<<<<<< Updated upstream
-const stripe = require("stripe")('{link: to Stripe}');
-=======
+
 const stripe = require("stripe")(process.env.STRIPE_KEY);
->>>>>>> Stashed changes
+
 
 router.get('/',(req,res,next)=>{
     Cart.find((err,carts)=>{
