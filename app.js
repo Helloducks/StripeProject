@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+require("dotenv").config();
 //cors is needed here because stripe post request will come from client side
 const cors = require("cors")
 var mongoose = require('mongoose');

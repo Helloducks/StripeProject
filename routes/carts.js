@@ -3,7 +3,11 @@ const multer = require('multer');
 const path = require('path');
 var router = express.Router();
 const Cart =  require('../models/cart');
+<<<<<<< Updated upstream
 const stripe = require("stripe")('{link: to Stripe}');
+=======
+const stripe = require("stripe")(process.env.STRIPE_KEY);
+>>>>>>> Stashed changes
 
 router.get('/',(req,res,next)=>{
     Cart.find((err,carts)=>{
@@ -44,8 +48,8 @@ router.get('/create-stripe-session', (req,res,next)=>{
                 const session = await stripe.checkout.sessions.create({
                   payment_method_types : ['card'],
                   mode: 'payment',
-                  success_url : `http://localhost:3000/carts/success?sessionId={CHECKOUT_SESSION_ID}`,
-                  cancel_url : `http://localhost:3000/carts/cancel`,
+                  success_url : `${process.env.SERVER_URL}/carts/success?sessionId={CHECKOUT_SESSION_ID}`,
+                  cancel_url : `${process.env.SERVER_URL}/carts/cancel`,
                   
                   line_items : cartProducts.map(product=>{
                     return{
